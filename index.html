@@ -388,14 +388,30 @@
 
     </div>
 
-    <!-- CHANGELOG SECTION -->
+    <!-- CHANGELOG (Collapsible) -->
     <div class="dictionary-section">
-      <h2>Changelog</h2>
+      <h2 style="cursor: pointer;" onclick="toggleChangelog()">Changelog ▼</h2>
 
-      <p><strong>Version 1.0</strong> — Initial release of the website.</p>
-      <p><strong>Version 1.1</strong> — Corrected names and descriptions.</p>
-      <p><strong>Version 1.2</strong> — Added Freddy Robertson and changelog history.</p>
+      <div id="changelog-content" style="display: none;">
+        <p><strong>Version 1.0</strong> — Initial release of the website.</p>
+        <p><strong>Version 1.1</strong> — Corrected names and descriptions.</p>
+        <p><strong>Version 1.2</strong> — Added Freddy Robertson and changelog history.</p>
+      </div>
     </div>
+
+    <script>
+      function toggleChangelog() {
+        const box = document.getElementById("changelog-content");
+        const header = document.querySelector("h2[onclick='toggleChangelog()']");
+        if (box.style.display === "none") {
+          box.style.display = "block";
+          header.innerHTML = "Changelog ▲";
+        } else {
+          box.style.display = "none";
+          header.innerHTML = "Changelog ▼";
+        }
+      }
+    </script>
 
     <div class="footer">
 
@@ -411,14 +427,4 @@
 
       <div class="cfmlg">
         A CFMLG production
-        <img src="image12.png" alt="CFMLG logo">
-      </div>
-
-      <p>This website is for educational and entertainment purposes only and should not be taken seriously or personally.</p>
-
-      <div class="version">Version 1.2</div>
-
-    </div>
-
-  </body>
-</html>
+        <img src="image12.png" alt
